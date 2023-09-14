@@ -13,18 +13,28 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('fullname');
-            $table->string('username', 100)->unique();
-            $table->integer('province_id');
-            $table->integer('regency_id');
-            $table->integer('level_id')->default(0);
-            $table->integer('pic_id')->nullable();
+            $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
+
+        // Schema::create('users', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('fullname');
+        //     $table->string('username', 100)->unique();
+        //     $table->integer('province_id');
+        //     $table->integer('regency_id');
+        //     $table->integer('level_id')->default(0);
+        //     $table->integer('pic_id')->nullable();
+        //     $table->string('email')->unique();
+        //     $table->timestamp('email_verified_at')->nullable();
+        //     $table->string('password');
+        //     $table->rememberToken();
+        //     $table->timestamps();
+        // });
     }
 
     /**
